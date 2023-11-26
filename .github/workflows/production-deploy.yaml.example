@@ -1,0 +1,121 @@
+name: Production Deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  production_deploy:
+    name: "Production Deploy"
+    runs-on: ubuntu-latest
+    env:
+      ENV: "prod"
+      DEPLOYMENT_DIR: "deployment"
+
+    steps:
+      - name: Clean up previous build
+        run: rm ~/.gitconfig
+        continue-on-error: true
+
+      - name: Slack Notification
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":":rocket: [ *${{ github.repository }}* ] production deployment by *@${{ github.actor }}*: `started`"}' ${{ secrets.SLACK_DEPLOYMENT_WEBHOOK }}
+
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          # 0 indicates all history for all branches and tags.
+          fetch-depth: 0
+
+      - name: GitHub Environment Variables
+        uses: FranzDiebold/github-env-vars-action@v1.2.1
+
+      - name: Install Required Packages
+        run: sudo apt-get install jq
+
+      - name: Setting Up GitHub Credentials
+        run: git config --global url."https://oauth2:${{ secrets.FOUNDATION_ACCESS_TOKEN }}@github.com".insteadOf https://github.com
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.GH_ACTIONS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.GH_ACTIONS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.GH_ACTIONS_REGION }}
+
+      - name: Get Previous Tag
+        id: previoustag
+        run: |
+          TAG=$(git describe --tags --abbrev=0 $(git rev-list --tags --max-count=1 --skip=1))
+          echo "Previous release version: $TAG"
+          echo "::set-output name=tag::$TAG"
+
+      - name: Checking Changes on Deployment
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          base: ${{ steps.previoustag.outputs.tag }}
+          filters: |
+            terraform:
+              - 'deployment/*.tf'
+              - 'deployment/*.tf*'
+
+      - name: Setup Terraform
+        if: steps.changes.outputs.terraform == 'true'
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Initialization and Validation
+        id: init
+        if: steps.changes.outputs.terraform == 'true'
+        working-directory: ${{env.DEPLOYMENT_DIR}}
+        run: |
+          terraform fmt -check
+          terraform init
+          terraform workspace select prod
+          terraform validate
+
+      - name: Execute Terraform Plan
+        id: plan
+        if: steps.changes.outputs.terraform == 'true'
+        run: terraform plan -no-color --var-file=prod.tfvars
+        working-directory: ${{env.DEPLOYMENT_DIR}}
+        continue-on-error: true
+
+      - name: Check Terraform Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
+
+      - name: Applying Terraform Changes
+        if: steps.changes.outputs.terraform == 'true'
+        run: terraform apply -auto-approve --var-file=prod.tfvars
+        working-directory: ${{env.DEPLOYMENT_DIR}}
+
+      - name: Get Cloudfront Distribution ID
+        id: cloudfront
+        run: |
+          terraform init
+          terraform workspace select prod
+          echo "::set-output name=distribution-id::$(terraform output app_distribution_id)"
+        working-directory: ${{env.DEPLOYMENT_DIR}}
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Deploy
+        run: |
+          npm run upload-s3:prod
+          aws cloudfront create-invalidation --distribution-id ${{ steps.cloudfront.outputs.distribution-id }} --paths '/*'
+
+      - name: Slack Notification
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":":sparkles: [ *${{ github.repository }}* ] production deployment by *@${{ github.actor }}*: `done`"}' ${{ secrets.SLACK_DEPLOYMENT_WEBHOOK }}
+
+      - name: Clean up Git config
+        uses: webiny/action-post-run@2.0.1
+        with:
+          run: rm ~/.gitconfig
+          continue-on-error: true

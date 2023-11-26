@@ -1,0 +1,41 @@
+.categoryimg {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.categorytext {
+    font-size: 16px;
+    color: #fff !important;
+    font-weight: 500;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    word-break: break-word;
+}
+
+.textstyle {
+    color: #000;
+    position: relative;
+}
+
+.container.calclss {
+    min-height: calc(100vh - 100px);
+}
+
+.blogshedding {
+    font-size: 25px;
+    font-weight: 600;
+    color: #000;
+    text-transform: capitalize;
+}
+
+@media(max-width: 767px) {
+    .bloghedding {
+        font-size: 22px;
+    }
+}

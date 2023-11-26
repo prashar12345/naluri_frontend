@@ -1,0 +1,53 @@
+.text-center.contactext {
+    font-size: 35px;
+    font-weight: 600;
+    color: #457d9e;
+}
+
+// .contactbgclor {
+//     background: #457d9ed1;
+// }
+
+.submitbutton {
+    background: #457d9e78;
+    border: 3px solid #fff;
+    color: #fff;
+    width: 123px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 7px 0px;
+    border-radius: 5px;
+}
+
+.bg-formdark {
+    background-color: #457d9ed1;
+}
+
+// .login-wrapper {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     min-height: 100vh;
+//     width: 100% !important;
+// }
+
+// .contctimg {
+//     width: 100%;
+// }
+@media(max-width: 767px) {
+    .contact-us img {
+        display: none;
+    }
+
+    .bg-formdark {
+        background-color: transparent;
+    }
+
+    .contact-us .contactbgclor {
+        padding: 1rem !important;
+    }
+
+    .contact-us .submitbutton {
+        margin-top: 0px !important;
+    }
+}

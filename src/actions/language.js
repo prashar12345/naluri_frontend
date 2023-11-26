@@ -1,0 +1,1 @@
+export const language_success = (data) => ({ type: 'LANGUAGE_SUCCESS', data });

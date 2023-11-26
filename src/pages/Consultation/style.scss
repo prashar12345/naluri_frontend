@@ -1,0 +1,921 @@
+@import '../../scss/mixins';
+
+button {
+    outline: none !important;
+}
+
+.boderdivpoup {
+    border: 1px solid #80808047;
+    padding: 20px 0px;
+    border-radius: 10px;
+}
+
+img.profileimg {
+    width: 100%;
+    background: linear-gradient(180.68deg, #18605C 31.06%, rgba(24, 96, 92, 0) 190.44%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #197d9f;
+    object-position: top;
+    cursor: pointer;
+}
+
+span.nav-link.false {
+    color: #187dab;
+}
+
+.maincls {
+    background: #197D9F;
+    padding: 21px 30px;
+    min-height: 153px;
+}
+
+// .maincont {
+//     max-width: 640px;
+// }
+
+.dropclass {
+    background: #FFFFFF !important;
+    border: 2px solid $primaryColor !important;
+    border-radius: 53px;
+    color: $primaryColor !important;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+
+    &.active {
+        background-color: $primaryColor !important;
+        color: #fff !important;
+    }
+}
+
+h3.Bookhedding {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    color: #197D9F;
+}
+
+p.Consultation {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #197D9F;
+}
+
+p.profesion {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.namecls {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
+    color: #3f89a2;
+    text-align: center;
+}
+
+.Language {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+p.English {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+button#dropdownMenuButton.dattimedropdown {
+    background: #fff;
+    border: none;
+}
+
+input.datedropdown.form-control.mb-2 {
+    background: #FFFFFF;
+    border: 2px solid #197D9F;
+    border-radius: 53px;
+    color: #197d9f;
+    font-size: 14px;
+    font-weight: 500;
+    width: 179px;
+}
+
+
+
+input#fname.inputcls {
+    padding: 0px 12px;
+    border: none;
+    background: #197d9f;
+    color: #fff;
+}
+
+
+
+p.Certified {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+h3.Accreditations {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+button.Preferred {
+    background: #FFFFFF;
+    border-radius: 53px;
+    border: none;
+    color: #197d9f;
+    padding: 8px 13px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.clearbtn {
+    border-radius: 53px;
+}
+
+.modal-footer.footer {
+    border: none;
+}
+
+.modal-header.header {
+    border: none;
+}
+
+// h5.username {
+//     font-weight: 600;
+//     color: #197d9f;
+// }
+
+.y-middle {
+    vertical-align: middle;
+}
+
+.dropdown-toggle::after {
+    margin-left: 5 !important;
+}
+
+.dropdown {
+    .dropdown-toggle {
+        .text-truncate {
+            max-width: calc(100% - 20px);
+        }
+    }
+}
+
+input.Searchbarfil {
+    background: #197d9f30;
+    color: #197d9f;
+    border-radius: 100px;
+    border: none;
+    padding: 10px 26px;
+    letter-spacing: 0.1px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+i.fa.fa-search.searchfilter {
+    position: relative;
+    color: #197d9f;
+    left: -1.8rem;
+    top: 1px;
+    font-size: 13px;
+}
+
+.crosscross {
+    position: absolute;
+    top: 11px;
+    right: 3rem;
+    color: #197d9f;
+}
+
+.buletextcls {
+    background: #197d9f;
+    padding: 1px 15px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.copyIcon {
+    margin-left: auto;
+    cursor: pointer;
+    margin-right: 13px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 18px;
+}
+
+.policylink {
+    font-size: 16px;
+    color: #197D9E;
+}
+
+.sidecls {
+    box-shadow: 0px 0px 7px 0px grey;
+    padding: 15px 17px;
+}
+
+.sideheding {
+    color: #197d9f;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sidepara {
+    color: #626262;
+}
+
+
+.no-overflow {
+    overflow: initial !important;
+}
+
+.btn.roundbtn {
+    border-radius: 26px;
+    width: 296px;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.formmaincls {
+    position: relative;
+}
+
+.Chooseparatext {
+
+    color: #707070;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.iconiconcls {
+    color: #197D9F;
+    font-size: 17px;
+}
+
+.Consultationtitail {
+    color: $primaryColor;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.btn.btn-primary.search {
+    padding: 9px 47px;
+    border-radius: 33px;
+    font-size: 15px;
+}
+
+.fa.fa-search.searchiconcons {
+    position: absolute;
+    left: 8rem;
+    top: 1.5rem;
+    color: #fff;
+}
+
+i.far.fa-clock.timeclock.mr-1 {
+    color: #197d9f;
+}
+
+.react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+    border-top-right-radius: 1rem;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+    border-radius: 1.3rem;
+    background-color: #197d9f;
+    color: #fff;
+    border: none;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after {
+    border: none;
+}
+
+.react-datepicker__header {
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 0px;
+    border-top-left-radius: 1rem;
+    padding: 8px 0;
+    position: relative;
+}
+
+.ConsultationPreference {
+    color: $primaryColor !important;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #ffffff !important;
+    text-align: left !important;
+    font-size: 15px;
+}
+
+.Location {
+    color: #707070;
+}
+
+.Perak {
+    color: $primaryColor;
+}
+
+.choosepreference {
+    border: 1px solid #00000038;
+    border-radius: 12px;
+    color: $primaryColor;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 11px;
+    text-align: center;
+    cursor: pointer;
+
+    &.active {
+        background-color: $primaryColor;
+        color: #fff;
+    }
+}
+
+.datetimediv {
+    color: #707070;
+}
+
+.showno_btn {
+    background: #fff;
+    border: none;
+    color: #A10027;
+    border-radius: 27px;
+    width: 39px;
+    padding: 11px;
+}
+
+.conbookbody {
+    padding: 16px 20px;
+}
+
+.srchtxtpara.mb-3 {
+    color: #707070;
+}
+
+.showyes_btn {
+    border-radius: 27px;
+    width: 192px;
+}
+
+.mainconfbokdiv_second {
+    border: 1px solid #8080804f;
+    border-radius: 0px 15px 15px 0px;
+    padding: 10px 0px;
+    width: 228px;
+}
+
+.mainconfbokdiv {
+    border: 1px solid #8080804f;
+    border-radius: 15px 0px 0px 15px;
+    padding: 10px 0px;
+    width: 213px;
+}
+
+.confrmbookbody {
+    padding: 16px 30px;
+}
+
+.booktimediv {
+    color: $primaryColor;
+}
+
+.monthdiv {
+    color: $primaryColor;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+
+.Padang_Rengas {
+    color: $primaryColor;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.chosetimemain {
+    padding: 20px 15px;
+    border-radius: 16px;
+    width: 245px;
+}
+
+.timeslot {
+    color: $primaryColor;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.choosetimepara {
+    color: #707070;
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+
+.filterSearch {
+    position: relative;
+
+    .clear {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.chossedate {
+    color: $primaryColor;
+    border: 1px solid #80808070;
+    border-radius: 12px;
+    padding: 4px 9px;
+    cursor: pointer;
+
+    &.active {
+        background-color: $primaryColor;
+        color: #fff;
+    }
+}
+
+
+.dropdown-item {
+    white-space: initial;
+}
+
+.consultationdrop {
+    border: 1px solid #80808017 !important;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 26px;
+    max-height: 300px;
+    overflow: auto;
+    font-size: 14px;
+    width: 215px;
+    box-shadow: 0px 0px 12px 0px #80808045;
+    z-index: 99999;
+}
+
+.consultationdrop a.dropdown-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.chosetimemain {
+    margin-top: 28px;
+}
+
+
+.react-datepicker {
+    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    font-size: 0.8rem;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #E8E8E8;
+    border-radius: 1rem;
+    display: inline-block;
+    position: relative;
+    margin-top: 17px;
+}
+
+.filtercls {
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    border-radius: 100px;
+    color: #197d9f;
+    padding: 7px 37px;
+    position: relative;
+
+    .count {
+        display: inline-block;
+        position: absolute;
+        background: $primaryColor;
+        width: 19px;
+        font-size: 10px;
+        text-align: center;
+        top: -7px;
+        right: 3px;
+        color: #fff;
+        border-radius: 50%;
+        line-height: 19px;
+    }
+}
+
+.serchbg {
+    background: #fff;
+    border-radius: 30px;
+    padding: 2px 17px;
+    border: 1px solid #E8E8E8;
+}
+
+.iconicontext {
+    color: #707070;
+    font-size: 18px;
+    border: none;
+    background: #fff;
+}
+
+.dropdown-toggle::after {
+    display: none;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.bgconsultasion {
+    background: rgba(215, 245, 255, 0.5);
+    border-radius: 20px;
+    padding: 25px 27px;
+}
+
+.PPSYCHOLOGIST {
+    color: #197d9f;
+}
+
+.modal-content.contentmodal {
+    border-radius: 15px;
+}
+
+.modal-title.Bookingmodaltit {
+    color: #197d9f;
+    font-weight: 600;
+}
+
+// .datechose {
+//     background: #197d9f30;
+//     color: #197d9f;
+//     border-radius: 100px;
+//     border: none;
+//     padding: 10px 26px;
+//     letter-spacing: 0.1px;
+//     font-weight: 500;
+//     font-size: 13px;
+// }
+
+// .poupheding {
+//     color: #000;
+//     background: #2785a53b;
+//     padding: 6px 0px;
+//     font-size: 15px;
+//     font-weight: 600;
+// }
+
+// .popuppara {
+//     font-size: 12px;
+//     color: #444444;
+// }
+
+// .popuptextcls {
+//     color: #444444;
+// }
+
+// end
+
+.username {
+    font-size: 18px;
+    font-weight: 700;
+    color: $primaryColor;
+}
+
+.srchtxt {
+    color: $primaryColor;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.Whatsapp_Video {
+    border: 1px solid #80808070;
+    padding: 3px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+
+    &.active {
+        background-color: $primaryColor;
+        color: #fff;
+    }
+}
+
+
+.calanderdiv {
+    position: relative;
+
+    .react-datepicker {
+        margin-top: 0 !important;
+    }
+
+    .react-datepicker-wrapper {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100% !important;
+        overflow: hidden;
+        position: absolute;
+        display: flex;
+
+        .react-datepicker__input-container {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .dateInput {
+            width: 100%;
+            visibility: hidden;
+        }
+    }
+
+    .calOverLay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+    }
+}
+
+
+.consolname {
+    background: #F6F6F6;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 30px;
+    color: #4A4A4A;
+}
+
+.Clear_all {
+    color: #197D9F;
+    font-weight: 500;
+    font-size: 15px;
+    background: #fff;
+    border: none;
+}
+
+.Show_btn {
+    border-radius: 22px;
+    width: 112px;
+}
+
+.timeclses {
+    border: 1px solid #80808078;
+    padding: 2px 11px;
+    border-radius: 6px;
+    color: $primaryColor;
+    font-weight: 500;
+    cursor: pointer;
+
+    &.active {
+        background-color: $primaryColor;
+        color: #fff;
+    }
+}
+
+.locationcls {
+    font-size: 15px;
+    color: #707070;
+}
+
+p.popuppara {
+    color: $primaryColor;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.appointment_type {
+    color: #197d9f;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.datetext {
+    color: #197d9f;
+    font-weight: 500;
+}
+
+i.fa.fa-calendar.iconiconcls.mr-1.mt-3.pt-1 {
+    cursor: pointer;
+}
+
+input#bookindatepicker {
+    cursor: pointer;
+}
+
+.facetoface {
+    border: 2px solid #E8E8E8;
+    padding: 8px 32px;
+    border-radius: 0px 8px 8px 0px;
+    color: $primaryColor;
+    font-weight: 500;
+}
+
+.whatsapvideodiv {
+    border: 2px solid #E8E8E8;
+    padding: 8px 20px;
+    border-radius: 8px 0px 0px 8px;
+    color: $primaryColor;
+    font-weight: 500;
+}
+
+
+.timetext {
+    color: #197d9f;
+    font-weight: 500;
+}
+
+.profileimagnew {
+    width: 100%;
+    background: linear-gradient(180.68deg, #18605C 31.06%, rgba(24, 96, 92, 0) 190.44%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 15px 0px 0px 15px;
+
+}
+
+.calanderdiv {
+    border: 2px solid #E8E8E8;
+    border-radius: 26px 0px 0px 26px;
+    padding: 15px 17px;
+}
+
+.calanderdivs,
+.consultationDivs {
+    max-width: 330px;
+
+    >* {
+        text-align: center;
+        width: 50%;
+    }
+}
+
+.timediv {
+    border: 2px solid #E8E8E8;
+    border-radius: 0px 26px 26px 0px;
+    padding: 15px 39px;
+    cursor: pointer;
+}
+
+.pretimeDropdown {
+    .dropdown-menu {
+        max-height: 300px;
+        overflow: auto;
+    }
+}
+
+.active-btn {
+    border: 1px solid $primaryColor !important;
+    outline: none !important;
+    padding: 2% 3% !important;
+    border-radius: 0.4rem !important;
+    color: $primaryColor;
+
+}
+
+.active-btn:focus {
+    background-color: rgba($color: $primaryColor , $alpha: 1) !important;
+    color: white !important;
+}
+
+.session_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.session_list .session_item {
+    flex: 0 25%;
+    max-width: 25%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.session_list .session_item .dropdown-toggle {
+    white-space: initial;
+}
+
+@media(max-width: 991px) {
+    .session_list .session_item {
+        flex: 0 50%;
+        max-width: 50%;
+    }
+
+    img.profileimg {
+        height: 150px;
+    }
+
+    .consultation-modal {
+        padding-left: 0rem !important;
+    }
+
+    .btn.roundbtn {
+        width: 100%;
+    }
+}
+
+@media(max-width: 767px) {
+    .consultation-modal {
+        padding-left: 1rem !important;
+    }
+
+    img.profileimg {
+        height: auto;
+    }
+
+    .Consultationtitail {
+        font-size: 25px;
+        margin-bottom: 16px;
+    }
+
+    .bgconsultasion {
+        padding: 25px 15px;
+    }
+
+    .filter {
+        display: flex;
+    }
+
+    .filtercls {
+        padding: 7px 25px;
+    }
+
+    .session_list .session_item {
+        flex: 0 100%;
+        max-width: 100%;
+    }
+
+    div#profiledataModal .col-md-5.pl-0 {
+        order: 2;
+        padding-left: 1rem !important;
+    }
+
+    div#profiledataModal .consultation-modal {
+        order: 1;
+    }
+
+    .fc .fc-toolbar-title {
+        font-size: 18px;
+
+    }
+
+    .fc .fc-button-group>.fc-button {
+        font-size: 12px;
+        padding: 0.4em 5px !important;
+    }
+
+    .fc .fc-button-primary:disabled {
+        padding: 0.28em 5px !important;
+    }
+}
+
+h3.locationcls {
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 280px) and (max-width: 540px) {
+    button#dropdownMenuButton {
+        margin-bottom: 10px;
+    }
+
+    .mainreqest #dropdownMenuButton {
+        margin-bottom: 0 !important;
+    }
+
+    button.Preferred {
+        margin-bottom: 27px;
+    }
+
+    button.filtercls {
+        margin-bottom: 7px;
+    }
+}

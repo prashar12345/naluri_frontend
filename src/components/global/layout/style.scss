@@ -1,0 +1,85 @@
+@import '../../../scss/mixins';
+
+.main-wrapper {
+  background-color: #eee;
+
+  main.main {
+    width: calc(100% - 250px);
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+// .main {
+//   .mainarea {
+//     margin-top: -33px;
+//     position: relative;
+//   }
+// }
+
+.logocls {
+  width: 100%;
+  max-width: 170px !important;
+}
+
+.dash-title {
+  position: relative;
+  background-color: #f6f8fb;
+  padding: 11px 19px;
+  font-size: 28px;
+  line-height: normal;
+  border-radius: 6px;
+  margin-bottom: 30px;
+
+  .total {
+    font-size: 14px;
+    float: right;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+}
+
+.main-sidebar {
+  position: relative;
+  background-color: #fff;
+  max-width: 250px;
+  min-width: 250px;
+  width: 100%;
+  // min-height: 100vh;
+  // margin-top: -$headerHeight;
+
+  .sidebar-brand img {
+    max-width: 170px !important;
+  }
+
+  .nav {
+    .nav-item {
+      .nav-link {
+        color: $primaryColor;
+      }
+
+      &.active {
+        .nav-link {
+          background-color: $primaryColor;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main-wrapper main.main {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 467px) {
+  .form-row.uploaded-image-row>div {
+    max-width: 50%;
+
+    .uploaded-image img {
+      height: 100px;
+    }
+  }
+}

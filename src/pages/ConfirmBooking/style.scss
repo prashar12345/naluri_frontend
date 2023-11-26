@@ -1,0 +1,190 @@
+.detaildivclss {
+    border: 1px solid #ACACAC;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ffff;
+    padding: 20px 35px;
+    border-radius: 16px;
+}
+
+.bgimg {
+    // background-image: url("/assets/img/ment.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    ;
+
+}
+
+
+.dataclss {
+    font-weight: 400;
+    font-size: 12px;
+    // color: gray;
+    color: #ffff;
+}
+
+.detaildivclss {
+    position: relative;
+}
+
+.Detaillableclss {
+    font-size: 17px;
+    font-weight: 600;
+    color: #197d9f;
+}
+
+.proimgcls {
+    border-radius: 114px;
+    width: 94px;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+
+.lableclss {
+    font-weight: 600;
+    color: #000000d1;
+    font-size: 12px;
+}
+
+.Confirm_Bookingheding {
+    font-size: 20px;
+    font-weight: 600;
+    color: #197d9f;
+}
+
+.whatsappicon {
+    max-width: 37px !important;
+    width: 100%;
+}
+
+.maincard {
+    box-shadow: 0px 0px 9px 0px #808080d9;
+    padding: 9px 16px;
+    background: #197d9f;
+    border-radius: 1px 22px;
+
+}
+
+.bgimg:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #0000001f;
+    height: 100%;
+    width: 100%;
+}
+
+.whatsappicon {
+    max-width: 200px;
+}
+
+
+// table
+
+.bookintbl {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.bookintbldata .bookintblhding th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+// tr:nth-child(even) {
+//     background-color: #197d9f;
+// }
+
+.bookintblrow:nth-child(even) {
+    background-color: #197d9f;
+
+}
+
+.bookintbl {
+    box-shadow: 0px 0px 4px #808080c9;
+}
+
+.bookintblhding {
+    color: #197d9f;
+}
+
+
+// .bookintbldata {
+//     color: #ffff;
+// }
+
+.bookintblhding {
+    color: #197d9f;
+    padding: 5px 6px;
+}
+
+.bookintbldata {
+    padding: 5px 7px;
+}
+
+
+.Successfullytick {
+    font-size: 38px;
+    color: #1B837C;
+}
+
+.Successfullycls {
+    color: #14424D;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.bookbutton {
+    display: inline-block;
+    background: #197D9F !important;
+    border: none;
+    color: #fff !important;
+    padding: 5px 0px;
+    width: 181px;
+    text-decoration: none !important;
+    border-radius: 24px;
+}
+
+.mainbookindiv.d-flex {
+    height: 100vh;
+}
+
+.Counsellornamecls {
+    font-size: 18px;
+    font-weight: 600;
+    color: #14424D;
+}
+
+.skydiv {
+    background: #D7F5FF;
+    border-radius: 14px;
+    padding: 15px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 550px;
+}
+
+.datetimecolor {
+    color: #14424D;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.iconclor {
+    color: #197D9F;
+}
+
+.graycolr {
+    color: #707070;
+    font-size: 14px;
+    text-transform: capitalize;
+}

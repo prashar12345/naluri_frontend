@@ -1,0 +1,1 @@
+export const modal_success = (data) => ({ type: 'MODAL_SUCCESS', data });

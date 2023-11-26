@@ -1,0 +1,15 @@
+.statusDropdown {
+    .dropdown-menu {
+        left: initial !important;
+        transform: none !important;
+        right: 0;
+        top: 100% !important;
+    }
+}
+
+@media screen and (min-width: 290px) and (max-width: 986px) {
+    input.form-control.chosedateclss {
+        margin-bottom: 8px;
+    }
+
+}

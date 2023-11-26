@@ -1,0 +1,281 @@
+@import "../../scss/mixins";
+
+.bookingbanner {
+    // background-image: url("/assets/img/health-effects-of-air-pollution.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.counsellorProfile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.readcheck {
+    cursor: pointer;
+    text-decoration: underline;
+    color: $primaryColor;
+}
+
+.tophedding {
+    font-size: 25px;
+    font-weight: 600;
+    color: #008280;
+}
+
+.heddingbooking {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.parabooking {
+    font-size: 15px;
+}
+
+.paryvacyclss {
+    color: #000000bf;
+}
+
+.pryvecyhedding {
+    font-size: 20px;
+    font-weight: 600;
+    color: #197d9f;
+}
+
+.top_hedding {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.semi_hedding {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+
+}
+
+.noteclss {
+    font-weight: 600;
+}
+
+li.boldtextcls {
+    font-weight: 600;
+}
+
+
+//   new design
+
+
+.bgbagroundcolr {
+    background: #F6F6F6;
+    border-radius: 0px 0px 20px 20px;
+    padding: 20px 18px;
+    margin-top: -17px;
+}
+
+.intakedrop {
+    border: none;
+    background: #ffff;
+    padding: 9px 9px;
+    border-radius: 5px;
+    color: #4A4A4A;
+    text-align: left;
+}
+
+.fa.fa-check-circle.greentick {
+    color: #1B837C;
+}
+
+.Book_Appointment {
+    background: #197D9F;
+    border: 1px solid #197d9f;
+    color: #fff;
+    width: 100%;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 10px 0px;
+}
+
+.wtroundbtn {
+    background: #fff;
+    border: 1px solid #197d9f;
+    color: #197d9f;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 10px 0px;
+    width: 142px;
+}
+
+.graycl {
+    color: #707070;
+    text-transform: capitalize;
+}
+
+.facetofacecls {
+    font-size: 15px;
+    color: #14424D;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.iconclorcls {
+    color: #197D9F;
+    font-size: 15px;
+}
+
+.pertitalecls {
+    color: #707070;
+}
+
+.personname {
+    color: #14424D;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.bookparastyle {
+    color: #707070;
+}
+
+
+.bookdetailcls {
+    padding: 20px;
+}
+
+.bookrightimg {
+    height: 169px;
+    width: 100%;
+    background: linear-gradient(180.68deg, #18605C 31.06%, rgba(24, 96, 92, 0) 190.44%);
+    border-radius: 15px 15px 0px 0px;
+    object-fit: contain;
+    object-position: top;
+}
+
+.rightbgcolr {
+    background: #FFFFFF;
+    border: 1px solid #ACACAC;
+    border-radius: 20px;
+}
+
+.Personalhead {
+    color: #14424D;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+// i.fa.fa-angle-down.acordiandropicon2 {
+//     margin-left: 21rem;
+// }
+
+// i.fa.fa-angle-down.acordiandropicon1 {
+//     margin-left: 32.2rem;
+// }
+
+// i.fa.fa-angle-down.acordiandropicon {
+//     margin-left: 32rem;
+// }
+
+// i.fa.fa-angle-down.selectdrop {
+//     margin-left: 14rem;
+// }
+
+// i.fa.fa-angle-down.selectdrop {
+//     margin-left: 14rem;
+//     color: #197D9F;
+// }
+
+// .fa.fa-angle-down {
+//     position: absolute;
+//     right: 11px;
+//     color: #197D9F;
+// }
+
+i.fa.fa-angle-down.dropselect {
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    color: #197d9f;
+}
+
+.acordiandropicon {
+    position: absolute;
+    right: 41px;
+    color: #197D9F;
+}
+
+.acordian_design {
+    &:not(.collapsed) {
+        .acordiandropicon {
+            &::before {
+                content: "\f106" !important;
+            }
+        }
+    }
+}
+
+// acoordian
+
+.checkcontent {
+    color: #4A4A4A;
+}
+
+a.backbtn {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2e7dae;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.acordian_design {
+    background: #f6f6f6;
+    border-radius: 15px;
+    padding-left: 15px !important;
+    font-size: 20px;
+    color: #14424D !important;
+    height: 56px;
+
+    &::before {
+        content: none !important;
+    }
+}
+
+
+#accordion .panel-heading {
+    padding: 0;
+}
+
+#accordion .panel-title>a {
+    display: block;
+    padding: 0.4em 0.6em;
+    outline: none;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#accordion .panel-title>a.accordion-toggle::before,
+#accordion a[data-toggle="collapse"]::before {
+    content: "\e113";
+    float: left;
+    font-family: 'Glyphicons Halflings';
+    margin-right: 1em;
+}
+
+#accordion .panel-title>a.accordion-toggle.collapsed::before,
+#accordion a.collapsed[data-toggle="collapse"]::before {
+    content: "\e114";
+}
+
+.back-btn-text {
+    font-size: 0.8rem !important;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+// end accordian

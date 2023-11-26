@@ -1,0 +1,375 @@
+img.homeimg {
+    width: 100%;
+    max-width: 253px;
+    object-fit: cover;
+}
+
+.homeimgtop {
+    width: 100%;
+    max-width: 330px;
+    margin-left: auto;
+}
+
+.homemainclss {
+    background: #EBFAFF;
+    border-radius: 20px;
+}
+
+.hedding {
+    color: #14424D;
+    font-weight: 700;
+    font-size: 39px;
+    line-height: normal;
+}
+
+.homethreediv.mt-5 {
+    background: #F6F6F6;
+    border-radius: 20px;
+}
+
+.paraclass {
+    color: #4A4A4A;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+// .Evaluate_text {
+//     color: #197d9f;
+// }
+
+.Start_Assessmentbtn {
+    display: inline-block;
+    background: #ffff !important;
+    border: 1px solid #E8E8E8;
+    border-radius: 44px;
+    padding: 10px 20px;
+    color: #197D9F !important;
+    font-weight: 700;
+    width: 193px;
+    font-size: 18px;
+    text-decoration: none !important;
+    text-align: center;
+}
+
+.loginspancls {
+    color: #197d9f;
+    font-weight: 500;
+}
+
+.Selfequippedimg {
+    width: 100%;
+    object-fit: cover;
+    background: #EBFAFF;
+    height: 125px;
+}
+
+.imgbotmtext {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    padding: 9px 2px;
+    padding-left: 6px;
+}
+
+
+.homeimg {
+    border: 1px solid #E8E8E8;
+    border-radius: 11px;
+    width: 240px;
+
+    >img {
+        width: 100%;
+        height: 157px;
+        object-fit: cover;
+    }
+}
+
+.botomclass {
+    color: #707070;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.slick-arrow {
+    color: #000 !important;
+    background-color: #3683ab !important;
+    border-radius: 250%;
+}
+
+.Depressionutoon {
+    display: inline-block;
+    background: #ffff;
+    border: 1px solid #80808036;
+    border-radius: 29px;
+    color: #3683ab;
+    font-weight: 700;
+    padding: 6px 9px;
+    font-size: 14px;
+    text-decoration: none !important;
+    text-transform: capitalize;
+
+    &.active {
+        background-color: #3683ab;
+        color: #fff !important;
+    }
+}
+
+
+
+.imgbotmtext {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.begin_Assessmentbtn {
+    background: #197d9f;
+    border: none;
+    border-radius: 22px;
+    padding: 11px 1px;
+    color: #ffffff;
+    font-weight: 500;
+    width: 164px;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+
+.Explore_Assessmentbtn {
+    background: #ffffff;
+    border: 1px solid #E8E8E8;
+    border-radius: 42px;
+    padding: 8px 11px;
+    color: #197D9F !important;
+    font-weight: 700;
+    width: 233px;
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none !important;
+
+}
+
+.Complete_Assessmentbtn {
+    background: #f6f6f6;
+    border: 1px solid #E8E8E8;
+    border-radius: 22px;
+    padding: 11px 1px;
+    color: #197D9F;
+    font-weight: 500;
+    width: 320px;
+    font-size: 15px;
+    text-align: center;
+
+}
+
+.bodarcls {
+    border: 1px solid #80808054;
+    border-radius: 5px;
+    text-align: center;
+    height: 138px;
+}
+
+.inrdiv {
+    max-width: 451px;
+    padding-right: 10px;
+    // padding: 20px 20px;
+}
+
+.homeseconddiv {
+    border: 1px solid #80808042;
+    border-radius: 20px;
+}
+
+.Evaluate_text {
+    color: #14424D;
+    font-size: 38px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.Evaluate_paira {
+    color: #4A4A4A;
+    font-size: 20px;
+}
+
+.numcls {
+    color: #197D9F;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.Lessthan {
+    color: #707070;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.bodarcls {
+    border: 1px solid #80808054;
+    border-radius: 5px;
+    text-align: center;
+}
+
+// .homemain_div {
+//     max-width: 455px;
+// }
+
+.homebtn.btn.btn-primary {
+    border-radius: 34px;
+    padding: 10px 0px;
+    width: 194px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logclass {
+    color: #197D9F;
+    font-weight: 700;
+}
+
+// .frontlogo {
+//     width: 130px;
+// }
+
+nav.navbar.navbar-expand-lg.main-navbar {
+    background: #fff;
+}
+
+.textbt {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.iconclass {
+    font-size: 29px;
+    color: #197d9f;
+}
+
+// .bottomclass {
+//     background-color: #ffff;
+// }
+.mentalhealth_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mentalhealth_item {
+    flex: 0 25%;
+    max-width: 25%;
+    padding-right: 10px;
+    margin-bottom: 1rem;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 540px) {
+    .nav-item {
+        margin-left: 6px;
+    }
+
+    .bodarcls {
+        margin-bottom: 15px;
+    }
+
+    // .Evaluate_text {
+    //     font-size: 22px !important;
+    //     padding: 15px;
+    // }
+
+    img.homeleftimg {
+        width: 100% !important;
+    }
+
+    .Evaluate_img {
+        padding: 28px;
+    }
+
+    .homeimg {
+        width: 100%;
+    }
+
+    .Selfequippedimg {
+        height: auto;
+    }
+
+    .Assessmentbtnmaincls {
+        text-align: center;
+    }
+
+    .Evaluate_paira {
+        padding: 15px !important;
+    }
+
+    .Depressionutoon.mr-2 {
+        margin-bottom: 10px;
+        text-transform: capitalize;
+
+    }
+
+    .vegcls.d-flex.flex-wrap.mb-3 {
+        margin-left: 11px;
+    }
+}
+
+
+@media screen and (min-width: 755px) and (max-width: 986px) {
+    img.homeleftimg {
+        width: 278px !important;
+    }
+}
+
+@media(max-width: 991px) {
+
+    .homemainclss img.homeleftimg,
+    img.homeleftimg {
+        width: 100%;
+    }
+
+    .homemain_div .fulllogoimg {
+        max-width: 200px;
+    }
+
+    // .Evaluate_text {
+    //     font-size: 22px;
+    // }
+
+    .homebtn.btn.btn-primary {
+        min-width: 150px;
+        font-size: 16px;
+    }
+
+    .mentalhealth_item {
+        flex: 0 50%;
+        max-width: 50%;
+    }
+
+    img.Evaluate_img {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+}
+
+@media(max-width: 767px) {
+    .mentalhealth_item {
+        flex: 0 100%;
+        max-width: 100%;
+    }
+
+    .slick-slider.slick-initialized {
+        padding: 0px 10px;
+    }
+
+    .slick-prev {
+        left: 0 !important;
+    }
+
+    .slick-next {
+        right: 0 !important;
+    }
+}

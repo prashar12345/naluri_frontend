@@ -1,0 +1,61 @@
+@import '../../scss/mixins';
+
+.badge{
+    font-size: inherit !important;
+    font-weight: 500;
+}
+
+.videoConsultation {
+    border: 1px solid #ACACAC;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: #14424D;
+    padding: 16px 21px;
+    cursor: pointer;
+
+    &.active {
+        background: $primaryColor;
+        color: #fff;
+        border-color: $primaryColor;
+    }
+}
+
+.sloteDate {
+    max-width: 150px;
+}
+
+select#cars {
+    width: 100%;
+    padding: 13px 18px;
+    background: #F6F6F6;
+    border-radius: 8px;
+    border: none;
+}
+
+.colodiv {
+    background: #197D9F;
+    mix-blend-mode: normal;
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+}
+
+.Consultationhedding.mb-3 {
+    color: #14424D;
+    font-weight: 700;
+}
+
+
+.bookhedding {
+    font-weight: 700;
+    color: #14424D;
+
+}
+
+.parachoose {
+    font-size: 18px;
+    color: #707070;
+}

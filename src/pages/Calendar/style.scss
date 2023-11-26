@@ -1,0 +1,61 @@
+.calendarWrapper {
+    .fc-event-time {
+        display: none !important;
+    }
+
+    .fc-daygrid-event {
+        display: block;
+        white-space: initial;
+        padding: 5px;
+        font-weight: 600;
+
+        &.availability {
+            background-color: #d7f5ff;
+            pointer-events: none;
+        }
+    }
+
+    .fc-scrollgrid-sync-table,
+    .fc-col-header,
+    .fc .fc-scrollgrid-section,
+    .fc .fc-daygrid-body,
+    .fc .fc-view-harness {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .fc .fc-scroller-liquid-absolute,
+    .fc-dayGridMonth-view {
+        position: initial !important;
+    }
+
+    .fc-daygrid-day {
+        height: 85px;
+
+        &.disabled {
+            background-color: #ededed !important;
+            pointer-events: none;
+        }
+    }
+}
+
+
+.modal-md-dialog {
+    max-width: 900px;
+}
+
+.bookings {
+    .bookingitem {
+        cursor: pointer;
+        padding: 10px 10px;
+        border-radius: 6px;
+        border: 1px solid #d2d2d2;
+    }
+}
+
+
+@media screen and (min-width: 290px) and (max-width: 346px) {
+    .fc .fc-toolbar-title {
+        font-size: 12px !important;
+    }
+}

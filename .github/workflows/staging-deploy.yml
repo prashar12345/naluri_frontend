@@ -1,0 +1,109 @@
+name: Staging Deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  staging_deploy:
+    name: "Staging Deploy"
+    runs-on: ubuntu-latest
+    env:
+      DEPLOYMENT_DIR: "deployment"
+
+    steps:
+      - name: Clean up previous build
+        run: rm ~/.gitconfig
+        continue-on-error: true
+
+      - name: Slack Notification
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":":rocket: [ *${{ github.repository }}* ] staging deployment by *@${{ github.actor }}*: `started`"}' ${{ secrets.SLACK_DEPLOYMENT_WEBHOOK }}
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: GitHub Environment Variables
+        uses: FranzDiebold/github-env-vars-action@v1.2.1
+
+      - name: Install Required Packages
+        run: sudo apt-get install jq
+
+      - name: Setting Up GitHub Credentials
+        run: git config --global url."https://oauth2:${{ secrets.FOUNDATION_ACCESS_TOKEN }}@github.com".insteadOf https://github.com
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.GH_ACTIONS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.GH_ACTIONS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.GH_ACTIONS_REGION }}
+
+      - name: Checking Changes on Deployment
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            terraform:
+              - 'deployment/*.tf'
+              - 'deployment/*.tf*'
+      - name: Setup Terraform
+        if: steps.changes.outputs.terraform == 'true'
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Initialization and Validation
+        id: init
+        if: steps.changes.outputs.terraform == 'true'
+        working-directory: ${{env.DEPLOYMENT_DIR}}
+        run: |
+          terraform fmt -check
+          terraform init
+          terraform workspace select stag
+          terraform validate
+
+      - name: Execute Terraform Plan
+        id: plan
+        if: steps.changes.outputs.terraform == 'true'
+        run: terraform plan -no-color --var-file=stag.tfvars
+        working-directory: ${{env.DEPLOYMENT_DIR}}
+        continue-on-error: true
+
+      - name: Check Terraform Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
+
+      - name: Applying Terraform Changes
+        if: steps.changes.outputs.terraform == 'true'
+        run: terraform apply -auto-approve --var-file=stag.tfvars
+        working-directory: ${{env.DEPLOYMENT_DIR}}
+
+      - name: Get Cloudfront Distribution ID
+        id: cloudfront
+        run: |
+          terraform init
+          terraform workspace select stag
+          echo "::set-output name=distribution-id::$(terraform output app_distribution_id)"
+        working-directory: ${{env.DEPLOYMENT_DIR}}
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Deploy
+        run: |
+          npm run upload-s3:stag
+          aws cloudfront create-invalidation --distribution-id E2B8UYYMLDPPM4 --paths '/*'
+
+      # ${{ steps.cloudfront.outputs.distribution-id }}
+
+      - name: Slack Notification
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":":sparkles: [ *${{ github.repository }}* ] staging deployment by *@${{ github.actor }}*: `done`"}' ${{ secrets.SLACK_DEPLOYMENT_WEBHOOK }}
+
+      - name: Clean up Git config
+        uses: webiny/action-post-run@2.0.1
+        with:
+          run: rm ~/.gitconfig
+          continue-on-error: true

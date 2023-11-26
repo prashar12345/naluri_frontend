@@ -1,0 +1,151 @@
+name: 'Check PR'
+
+on:
+  pull_request:
+    paths-ignore:
+      - '.github/**'
+      - '.vscode/**'
+      - '.eslintrc.json'
+      - '.gitignore'
+      - '.pre-commit-config.yaml'
+      - '.prettierrc'
+      - '*.md'
+
+jobs:
+  terraform_plan:
+    name: 'Terraform Plan'
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    env:
+      DEPLOYMENT_DIR: 'deployment'
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: GitHub Config
+        run: git config --global url."https://oauth2:${{ secrets.FOUNDATION_ACCESS_TOKEN }}@github.com".insteadOf https://github.com
+
+      - name: Checking Changes
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            terraform:
+              - 'deployment/*.tf'
+              - 'deployment/*.tf*'
+            stag:
+              - 'deployment/stag.tfvars'
+            prod:
+              - 'deployment/prod.tfvars'
+      - name: Configure AWS credentials
+        if: steps.changes.outputs.terraform == 'true'
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.GH_ACTIONS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.GH_ACTIONS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.GH_ACTIONS_REGION }}
+
+      - name: Setup Terraform
+        if: steps.changes.outputs.terraform == 'true'
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Terraform Format
+        id: fmt
+        if: steps.changes.outputs.terraform == 'true'
+        run: terraform fmt -check
+        working-directory: ${{ env.DEPLOYMENT_DIR }}
+
+      - name: Terraform Init
+        id: init
+        if: steps.changes.outputs.terraform == 'true'
+        run: terraform init
+        working-directory: ${{ env.DEPLOYMENT_DIR }}
+
+      - name: Check staging setup
+        id: stag-plan
+        if: steps.changes.outputs.terraform == 'true' || steps.changes.outputs.stag == 'true'
+        working-directory: ${{ env.DEPLOYMENT_DIR }}
+        run: |
+          terraform workspace select stag
+          terraform plan -no-color --var-file=stag.tfvars
+        continue-on-error: true
+
+      - name: Update PR for staging setup
+        uses: actions/github-script@0.9.0
+        if: steps.changes.outputs.terraform == 'true' || steps.changes.outputs.stag == 'true'
+        env:
+          PLAN: "Terraform\n${{ steps.stag-plan.outputs.stdout }}"
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `
+            #### [Staging] Status
+            🖌 Format and Style: \`${{ steps.fmt.outcome }}\`
+            ⚙️ Initialization: \`${{ steps.init.outcome }}\`
+            📖 Terraform Plan: \`${{ steps.stag-plan.outcome }}\`
+            #### Details
+            \`\`\`
+            ${process.env.PLAN}
+            \`\`\`
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*
+            `;
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
+      - name: Check production setup
+        id: prod-plan
+        if: steps.changes.outputs.terraform == 'true' || steps.changes.outputs.prod == 'true'
+        working-directory: ${{ env.DEPLOYMENT_DIR }}
+        run: |
+          terraform workspace select prod
+          terraform plan -no-color --var-file=prod.tfvars
+        continue-on-error: true
+
+      - name: Update PR for production setup
+        uses: actions/github-script@0.9.0
+        if: steps.changes.outputs.terraform == 'true' || steps.changes.outputs.prod == 'true'
+        env:
+          PLAN: "Terraform\n${{ steps.prod-plan.outputs.stdout }}"
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `
+            #### [Production] Status
+            🖌 Format and Style: \`${{ steps.fmt.outcome }}\`
+            ⚙️ Initialization: \`${{ steps.init.outcome }}\`
+            📖 Terraform Plan: \`${{ steps.prod-plan.outcome }}\`
+            #### Details
+            \`\`\`
+            ${process.env.PLAN}
+            \`\`\`
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*
+            `;
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
+  # test:
+  #   name: "Run Unit Test"
+  #   runs-on: [self-hosted]
+  #   strategy:
+  #     matrix:
+  #       node-version: [16.x]
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v3
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #     - name: Injecting Token
+  #       run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.FOUNDATION_ACCESS_TOKEN }}" >> ./.npmrc
+  #     - name: CI Dependencies
+  #       run: npm ci
+  #     - name: Running Test
+  #       run: npm test

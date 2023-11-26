@@ -1,0 +1,31 @@
+.loglink {
+    color: #197d9f;
+    font-weight: 600;
+}
+
+.Allready {
+    a.text-primary.Allready {
+        color: #000 !important;
+    }
+}
+
+.graycolor {
+    color: #14424D !important;
+}
+
+.grayclas {
+    color: #14424D;
+}
+
+.phoneInput {
+    display: flex;
+    justify-content: space-between;
+
+    >*:first-child {
+        width: 60px;
+    }
+
+    & *:last-child {
+        width: calc(100% - 70px);
+    }
+}

@@ -1,0 +1,29 @@
+.appointmenthedding.ml-3 {
+    font-size: 20px;
+}
+
+.sloteDelete {
+    cursor: pointer;
+}
+
+.viewhedding {
+    font-weight: 500;
+    color: #197d9f;
+    font-size: 15px;
+}
+
+tr.tblclas {
+    text-transform: capitalize;
+}
+
+
+
+
+
+@media screen and (min-width: 280px) and (max-width: 540px) {
+
+    .d-flex.justify-content-between.mb-3.appointmentadd {
+        flex-wrap: wrap;
+    }
+
+}

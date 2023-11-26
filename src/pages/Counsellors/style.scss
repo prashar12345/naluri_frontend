@@ -1,0 +1,22 @@
+.usershedding {
+    font-size: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 0;
+}
+
+.addDropdown {
+    .dropdown-menu {
+        left: initial !important;
+        right: 0 !important;
+        top: 100% !important;
+        transform: none !important;
+    }
+}
+
+i.fas.fa-search.userserch {
+    position: absolute;
+    left: 12rem;
+    top: 11px;
+    color: #197fb1;
+}

@@ -1,0 +1,195 @@
+@import '../../scss/mixins';
+
+.lineclass {
+    background: #9FE8FF;
+    padding: 0px 42px;
+    height: 2px;
+}
+
+.submitBtn {
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 28px;
+
+    &.disabled {
+        border-color: #ACACAC !important;
+        background-color: #ACACAC !important;
+    }
+}
+
+.radiobtn {
+    border: 2px solid #9FE8FF;
+}
+
+.asssesmentcontainer {
+    min-height: calc(100vh - 100px);
+}
+
+.mainassment {
+    background: #D7F5FF;
+    mix-blend-mode: normal;
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    padding: 18px 36px;
+}
+
+.been {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+
+.hard {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    color: #000000;
+}
+
+.continueBtn {
+    padding: 14px 15px;
+    font-size: 16px;
+    line-height: normal;
+    max-width: 180px;
+    width: 100%;
+    border-radius: 30px;
+}
+
+#viewAsseessmentModal {
+    .modal-dialog {
+        max-width: 900px;
+    }
+}
+
+.qestiondiv {
+    border: 1px solid #80808024;
+    // padding: 0rem 9.5rem;
+    // margin-right: 20px !important;
+    width: 33%;
+}
+
+span.greenclss {
+    color: #1b837c;
+}
+
+.asshedding {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.asspara {
+    color: #707070;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.assimg {
+    height: 380px;
+}
+
+.startbtn {
+    background: $primaryColor;
+    align-self: center;
+    border: none;
+    color: #ffff;
+
+    max-width: 392px;
+}
+
+.registerWrapper {
+    max-width: 600px;
+    margin: auto;
+}
+
+.assnumb {
+    color: $primaryColor;
+    font-size: 38px;
+    font-weight: bolder;
+}
+
+button.startbtn.mt-4.form-control {
+    margin: auto;
+}
+
+.loginWrapper {
+    max-width: 600px;
+    margin: auto;
+}
+
+.geendivclss {
+    background: #EBFAFF;
+    padding: 25px 25px;
+}
+
+p.assparaqus {
+    margin-bottom: 0;
+}
+
+.Questiontopcls {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(172, 172, 172);
+}
+
+// .assimg {
+//     background-image: url(/assets/img/DASS-Question-1.png);
+//     height: 100%;
+//     background-size: cover;
+//     background-position: center center;
+// }
+.qestionimg {
+    height: 322px;
+}
+
+p.excls {
+    color: rgb(112, 112, 112);
+    font-size: 12px;
+}
+
+span.numcls {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #000;
+}
+
+.progress {
+    width: 95.3333%;
+    height: 8px;
+    background: #e9ecef;
+}
+
+.progress-bar {
+    height: 9px;
+    background: $primaryColor;
+}
+
+.datacls {
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 280px) and (max-width: 540px) {
+    .usershedding {
+        margin-bottom: 11px !important;
+    }
+
+    .mainquestion.d-flex {
+        flex-wrap: wrap;
+    }
+
+    h3.asshedding {
+        margin-top: 20px;
+    }
+
+    .qestiondiv {
+        padding: 1rem 9rem;
+        margin-bottom: 11px;
+    }
+}

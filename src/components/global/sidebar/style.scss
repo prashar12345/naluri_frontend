@@ -1,0 +1,32 @@
+@import '../../../scss/mixins';
+
+.main-sidebar .nav .nav-item.active .nav-link {
+    background-color: #fff;
+    color: #707070;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.hoverclass:hover {
+    background: #D7F5FF !important;
+    color: #197D9F !important;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.main-sidebar .nav .nav-item .nav-link {
+    color: grey !important;
+    font-weight: 400px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.main-sidebar .nav .nav-item .nav-link:hover,.main-sidebar .nav .nav-item.active .nav-link {
+    color: #197D9F !important;
+    background: #D7F5FF !important;
+    font-weight: 400px;
+    font-size: 14px;
+    font-weight: 500;
+}

@@ -1,0 +1,193 @@
+.username {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #14424D;
+}
+
+.recent-result {
+    background: #F6F6F6;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.recent-result h2 {
+    color: #14424D;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 0;
+}
+
+.recent-result small {
+    font-size: 15px;
+    line-height: 22px;
+    color: #707070;
+}
+
+.download button {
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    border-radius: 100px;
+    color: #197D9F;
+    font-weight: 600;
+    line-height: 30px;
+    min-width: 200px;
+}
+
+.save-result p {
+    color: #14424D;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 150%;
+}
+
+.save-result p a {
+    color: #197D9F;
+}
+
+.save-result .download button {
+    min-width: 260px;
+    height: 45px;
+}
+
+.boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+}
+
+.boxes p {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
+}
+
+.boxes h2 small {
+    display: block;
+}
+
+.box-color1 {
+    background: #DFFFFD;
+}
+
+.box-color1 p,
+.box-color1 h2,
+.box-color1 small {
+    color: #1B837C;
+}
+
+.box-color2 {
+    background: #F0F0FF;
+}
+
+.box-color2 p,
+.box-color2 h2,
+.box-color2 small {
+    color: #656BD7;
+}
+
+.box-color3 {
+    background: #FDEAFB;
+}
+
+.box-color3 p,
+.box-color3 h2,
+.box-color3 small {
+    color: #B649AA;
+}
+
+.btn-link:hover {
+    text-decoration: none;
+    color: #197D9F;
+}
+
+.border-color .btn-link {
+    min-width: 230px;
+    border: 1px solid #197D9F;
+}
+
+.bg-blue {
+    background-color: #D7F5FF;
+}
+
+.bottom-border {
+    border-bottom: 1px solid #fff;
+}
+
+.assesment {
+    background: #F0F0FF;
+    border-radius: 20px;
+}
+
+.assesment h2 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 34px;
+    color: #14424D;
+    padding: 1rem;
+    border-bottom: 1px solid #fff;
+}
+
+.desc p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #707070;
+}
+
+.desc {
+    padding: 1rem;
+}
+
+.bg-change {
+    background: #FDEAFB;
+}
+
+.desc button {
+    border: 1px solid #197D9F;
+}
+
+.past {
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid #dee2e6;
+}
+
+.past .head h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: #14424D;
+    margin-bottom: 1.6rem;
+}
+
+.past .result h2 {
+    font-size: 24px;
+}
+
+@media(max-width: 1100px) {
+    .main-body .chat-img img {
+        max-width: 130px !important;
+    }
+}
+
+@media(max-width: 991px) {
+    .main-body .chat-img {
+        display: none;
+    }
+}
+
+@media(max-width: 767px) {
+    .dahhedding {
+        font-size: 19px !important;
+    }
+
+
+}

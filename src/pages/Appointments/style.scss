@@ -1,0 +1,138 @@
+@import '../../scss/mixins';
+
+.statusDropdown {
+    .badge {
+        cursor: pointer;
+    }
+}
+
+.modal-footer {
+    .loading {
+        margin-right: 10px;
+    }
+}
+
+.usersearchDropdown {
+    position: relative;
+
+    .dropdownUserList {
+        max-height: 254px;
+        overflow: auto;
+    }
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: #197d9f !important;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #d7f5ff !important;
+}
+
+.docFile {
+    font-size: 12px;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    max-width: 222px;
+    padding: 6px;
+    box-shadow: 0 0 7px #00000047;
+
+    .fa-times {
+        position: absolute;
+        right: -3px;
+        top: -7px;
+        font-size: 16px;
+        cursor: pointer;
+        color: red;
+    }
+}
+
+.actionBtnicon {
+    color: #00809d !important;
+}
+
+.modal-dialog-lg {
+    max-width: 800px;
+}
+
+.dropdown-item.disabled,
+.dropdown-item:disabled {
+    color: #6c757d !important;
+    pointer-events: none !important;
+    background-color: #f4433638 !important;
+}
+
+.viewTypes {
+    >* {
+        padding: 10px;
+        border: 1px solid $primaryColor;
+        color: $primaryColor;
+
+        &.active {
+            background-color: $primaryColor;
+            color: #fff;
+        }
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+.blinkingLink {
+    animation: glowing-text 2000ms infinite;
+    color: #f23849 !important;
+}
+
+
+.renew-btn {
+    width: 100px;
+    position: relative;
+    // color:#fff;
+    animation: glowing 1500ms infinite;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 3px #fc808b;
+    }
+
+    50% {
+        box-shadow: 0 0 40px #fa5261;
+    }
+
+    100% {
+        box-shadow: 0 0 3px #f23849;
+    }
+}
+
+@keyframes glowing-text {
+    0% {
+        text-shadow: 0 0 3px #fc808b;
+    }
+
+    50% {
+        text-shadow: 0 0 40px #fa5261;
+    }
+
+    100% {
+        text-shadow: 0 0 1px #f23849;
+    }
+}
+
+@media(max-width: 767px) {
+    .consult-btn {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 0.5rem !important;
+    }
+}
